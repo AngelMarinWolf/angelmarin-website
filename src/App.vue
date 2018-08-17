@@ -1,37 +1,36 @@
 <template>
   <div id="app">
-    <b-navbar variant="dark" type="dark" style="background-color: #212224 !important;">
-      <b-navbar-brand>
+    <b-navbar id="nav" variant="dark" type="dark" toggleable="md" class="sticky-top">
+      <b-navbar-brand to="/" class="p-0 m-0">
         <img src="./assets/wolf-logo.png" alt="Wolf Logo" height="38px" class="mr-3">
         <strong>Angel Marin</strong>
       </b-navbar-brand>
+
+      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+
+      <b-collapse is-nav id="nav_collapse">
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item to="/about" class="pr-3 pl-3 pt-1 pb-1">About</b-nav-item>
+          <b-nav-item to="/experience" class="pr-3 pl-3 pt-1 pb-1">Experience</b-nav-item>
+          <b-nav-item to="/about" class="pr-3 pl-3 pt-1 pb-1">Education</b-nav-item>
+          <b-nav-item to="/about" class="pr-3 pl-3 pt-1 pb-1">Projects</b-nav-item>
+          <b-nav-item to="/about" class="pr-3 pl-3 pt-1 pb-1">Blog</b-nav-item>
+          <b-nav-item to="/about" class="pr-3 pl-3 pt-1 pb-1">Contact</b-nav-item>
+          <b-nav-item href="#hello" class="pr-3 pl-3 pt-1 pb-1">EN</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
     </b-navbar>
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+
     <router-view/>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 #nav {
-  padding: 30px;
+  background-color: #212224 !important;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+#nav a.nav-link {
+  padding: 0;
 }
 </style>
