@@ -6,10 +6,17 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import router from './router'
 import store from './store'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookF, faTwitter, faSkype, faLinkedinIn, faYoutube, faGithubAlt } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faFacebookF)
+library.add(faTwitter)
+library.add(faEnvelope)
+library.add(faSkype)
+library.add(faLinkedinIn)
+library.add(faYoutube)
+library.add(faGithubAlt)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
