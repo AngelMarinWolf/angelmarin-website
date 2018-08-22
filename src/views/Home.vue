@@ -1,20 +1,41 @@
 <template>
-  <section id="Home">
-    <Headline></Headline>
-    <About></About>
+  <section id="Home" class="animated fadeIn">
+    <b-container id="HeadlineContainer">
+      <b-row align-v="center">
+        <b-col>
+          <Headline/>
+        </b-col>
+      </b-row>
+    </b-container>
+    <Footer fixed/>
   </section>
 </template>
 
 <script>
 // @ is an alias to /src
 import Headline from '@/components/Headline.vue'
-import About from '@/components/About.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
     Headline,
-    About
+    Footer
   }
 }
 </script>
+
+<style media="screen">
+  #Home {
+    height: inherit;
+    background-image: url('../assets/backgrounds/courscant.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+  }
+  #HeadlineContainer, #HeadlineContainer .row {
+    height: inherit;
+  }
+</style>

@@ -2,22 +2,22 @@
   <div id="app">
     <Navbar/>
     <router-view/>
-    <Footer/>
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue'
-import Footer from '@/components/Footer.vue'
 
 export default {
   components: {
-    Navbar,
-    Footer
+    Navbar
   }
 }
 </script>
 
 <style>
-
+html, body, #app {
+  height: 100%;
+  background-color: #101D33;
+}
 </style>

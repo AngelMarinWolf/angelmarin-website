@@ -1,6 +1,6 @@
 <template lang="html">
 <section id="Headline">
-  <b-jumbotron fluid class="headline text-center mb-0">
+  <b-jumbotron fluid class="text-center mb-0 bg-transparent">
     <strong>Hi, I am</strong>
     <h1><strong>ANGEL MARIN</strong></h1>
     <hr class="d-none d-md-block">
@@ -36,7 +36,7 @@
 export default {
   data () {
     return {
-      employments: ['SysAdmin','DevOps','AWS Engineer'],
+      employments: ['SysAdmin', 'DevOps', 'AWS Engineer'],
       employment_display: 'SysAdmin',
       employment_in: true,
       employment_index: 0
@@ -44,32 +44,22 @@ export default {
   },
   created () {
     setInterval(() => {
-      this.employment_display = this.employments[this.employment_index];
-      this.employment_in = true;
+      this.employment_display = this.employments[this.employment_index]
+      this.employment_in = true
       setTimeout(() => {
-        this.employment_in = false;
-      }, 1000);
-      if (this.employment_index == this.employments.length - 1 ) {
-        this.employment_index = -1;
+        this.employment_in = false
+      }, 1000)
+      if (this.employment_index === this.employments.length - 1) {
+        this.employment_index = -1
       }
-      this.employment_index += 1;
-    }, 2000 )
+      this.employment_index += 1
+    }, 2000)
   }
 }
 </script>
 
 <style lang="css">
-.headline {
-  height: 720px;
-  color: white;
-  background-image: url('../assets/courscant.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  padding-top: 200px;
-}
-.headline hr {
+#HeadlineContainer hr {
   border-width: 2px;
   border-color: white;
   width: 75%;

@@ -1,6 +1,6 @@
 <template lang="html">
   <section id="Footer">
-    <footer class="footer">
+    <footer class="footer" v-bind:class="{'fixed-bottom': fixed}">
       <b-container>
         <p align="center" class="mb-0">
           Angel Marin | <strong>System Administrator</strong>
@@ -12,7 +12,10 @@
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  props: {
+    fixed: Boolean
+  }
 }
 </script>
 

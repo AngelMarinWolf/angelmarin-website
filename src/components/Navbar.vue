@@ -2,7 +2,7 @@
   <section id="Navbar">
     <b-navbar id="nav" variant="dark" type="dark" toggleable="lg" class="fixed-top">
       <b-navbar-brand to="/" class="p-0 m-0">
-        <img src="../assets/wolf-logo.png" alt="Wolf Logo" height="38px" class="mr-3">
+        <img src="../assets/logos/wolf-logo.png" alt="Wolf Logo" height="38px" class="mr-3">
         <strong>Angel Marin</strong>
       </b-navbar-brand>
 
@@ -10,12 +10,12 @@
 
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav class="ml-auto">
-          <b-nav-item href="#About"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'About':'Acerca de'}}</b-nav-item>
+          <b-nav-item to="/about"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'About':'Acerca de'}}</b-nav-item>
           <b-nav-item to="/experience"  class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'Experience':'Experiencia'}}</b-nav-item>
-          <b-nav-item to="/about"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'Education':'Educación'}}</b-nav-item>
-          <b-nav-item to="/about"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'Projects':'Proyectos'}}</b-nav-item>
-          <b-nav-item to="/about"       class="pr-3 pl-3 pt-2 pb-1 text-center">Blog</b-nav-item>
-          <b-nav-item to="/about"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'Contact':'Contacto'}}</b-nav-item>
+          <b-nav-item to="/education"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'Education':'Educación'}}</b-nav-item>
+          <b-nav-item to="/projects"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'Projects':'Proyectos'}}</b-nav-item>
+          <b-nav-item to="/blog"       class="pr-3 pl-3 pt-2 pb-1 text-center">Blog</b-nav-item>
+          <b-nav-item to="/contact"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'Contact':'Contacto'}}</b-nav-item>
           <b-button @click="switchLanguage" :pressed="!isEnglish" variant="outline-light">{{ language }}</b-button>
         </b-navbar-nav>
       </b-collapse>
