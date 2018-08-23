@@ -1,22 +1,24 @@
 <template lang="html">
   <section id="About" class="animated fadeIn">
-    <AboutTitle/>
-    <b-container id="ProfileCard" class="blurCard mt-3 mb-3">
-      <ProfileCard/>
-    </b-container>
-    <b-container class="mt-3 mb-3">
-      <b-row>
-        <b-col sm="6" id="InformationCard" class="p-0 pr-2">
-          <b-container class="blurCard p-3">
-            <InformationCard/>
-          </b-container>
-        </b-col>
-        <b-col sm="6" id="SkillsCard" class="p-0 pl-2">
-          <b-container class="blurCard p-3">
-            <SkillsCard/>
-          </b-container>
-        </b-col>
-      </b-row>
+    <AboutTitle sectionName="About me" description="Let me introduce myself"/>
+    <b-container class="p-md-0 pl-3 pr-3">
+      <b-container id="ProfileCard" class="blurCard mt-3 mb-3">
+        <ProfileCard/>
+      </b-container>
+      <b-container class="mt-3 mb-3">
+        <b-row>
+          <b-col sm="6" id="InformationCard" class="p-0 pr-md-2 mb-3">
+            <b-container class="blurCard p-3">
+              <InformationCard/>
+            </b-container>
+          </b-col>
+          <b-col sm="6" id="SkillsCard" class="p-0 pl-md-2 mb-3">
+            <b-container class="blurCard p-3">
+              <SkillsCard/>
+            </b-container>
+          </b-col>
+        </b-row>
+      </b-container>
     </b-container>
     <Footer/>
   </section>
