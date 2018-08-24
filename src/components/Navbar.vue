@@ -2,7 +2,7 @@
   <section id="Navbar">
     <b-navbar id="nav" variant="dark" type="dark" toggleable="lg" class="fixed-top">
       <b-navbar-brand to="/" class="p-0 m-0">
-        <img src="../assets/logos/wolf-logo.png" alt="Wolf Logo" height="38px" class="mr-3">
+        <img src="../assets/logos/wolf-logo-op-small.png" alt="Wolf Logo" height="38px" class="mr-3">
         <strong>Angel Marin</strong>
       </b-navbar-brand>
 

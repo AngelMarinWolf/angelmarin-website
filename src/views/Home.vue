@@ -28,7 +28,7 @@ export default {
 <style media="screen">
   #Home {
     height: inherit;
-    background-image: url('../assets/backgrounds/courscant.jpg');
+    background-image: url('../assets/backgrounds/courscant-op.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;

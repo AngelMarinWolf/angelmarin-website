@@ -47,7 +47,7 @@ export default {
 
 <style lang="css">
 #About {
-  background-image: url("../assets/backgrounds/debian-blue.jpg");
+  background-image: url("../assets/backgrounds/debian-blue-op.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

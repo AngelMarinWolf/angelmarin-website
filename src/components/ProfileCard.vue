@@ -1,7 +1,7 @@
 <template lang="html">
   <b-row align-v="center">
     <b-col sm="12" md="3" class="p-3">
-      <img src="../assets/pictures/profile_image.jpg" alt="Profile_Picture" class="img-thumbnail">
+      <img src="../assets/pictures/profile-picture-op.jpg" alt="Profile_Picture" class="img-thumbnail">
     </b-col>
     <b-col sm="12" md="9" class="p-3">
       <h4><strong>PROFILE</strong></h4>
