@@ -1,11 +1,13 @@
 <template lang="html">
   <section id="About" class="animated fadeIn">
-    <AboutTitle sectionName="About me" description="Let me introduce myself"/>
-    <b-container class="p-md-0 pl-3 pr-3">
-      <b-container id="ProfileCard" class="blurCard mt-3 mb-3">
+    <section id="AboutTitle">
+      <SectionTitle sectionName="About me" description="Let me introduce myself"/>
+    </section>
+    <b-container class="p-md-0 pl-3 pr-3 mt-3">
+      <b-container id="ProfileCard" class="blurCard mb-3">
         <ProfileCard/>
       </b-container>
-      <b-container class="mt-3 mb-3">
+      <b-container>
         <b-row>
           <b-col sm="6" id="InformationCard" class="p-0 pr-md-2 mb-3">
             <b-container class="blurCard p-3">
@@ -25,15 +27,16 @@
 </template>
 
 <script>
-import AboutTitle from '@/components/AboutTitle.vue'
+import SectionTitle from '@/components/SectionTitle.vue'
 import ProfileCard from '@/components/ProfileCard.vue'
 import InformationCard from '@/components/InformationCard.vue'
 import SkillsCard from '@/components/SkillsCard.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
+  name: 'About',
   components: {
-    AboutTitle,
+    SectionTitle,
     ProfileCard,
     InformationCard,
     SkillsCard,
@@ -55,6 +58,7 @@ export default {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  height: 100%;
 
   border-radius: 10px;
   border-color: grey;
