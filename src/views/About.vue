@@ -3,25 +3,27 @@
     <section id="AboutTitle">
       <SectionTitle sectionName="About me" description="Let me introduce myself"/>
     </section>
-    <b-container class="p-md-0 pl-3 pr-3 mt-3">
-      <b-container id="ProfileCard" class="blurCard mb-3">
-        <ProfileCard/>
+    <section id="AboutContent">
+      <b-container class="p-md-0 pl-3 pr-3 mt-3">
+        <b-container id="ProfileCard" class="blurCard mb-3">
+          <ProfileCard/>
+        </b-container>
+        <b-container>
+          <b-row>
+            <b-col sm="6" id="InformationCard" class="p-0 pr-md-2 mb-3">
+              <b-container class="blurCard p-3">
+                <InformationCard/>
+              </b-container>
+            </b-col>
+            <b-col sm="6" id="SkillsCard" class="p-0 pl-md-2 mb-3">
+              <b-container class="blurCard p-3">
+                <SkillsCard/>
+              </b-container>
+            </b-col>
+          </b-row>
+        </b-container>
       </b-container>
-      <b-container>
-        <b-row>
-          <b-col sm="6" id="InformationCard" class="p-0 pr-md-2 mb-3">
-            <b-container class="blurCard p-3">
-              <InformationCard/>
-            </b-container>
-          </b-col>
-          <b-col sm="6" id="SkillsCard" class="p-0 pl-md-2 mb-3">
-            <b-container class="blurCard p-3">
-              <SkillsCard/>
-            </b-container>
-          </b-col>
-        </b-row>
-      </b-container>
-    </b-container>
+    </section>
     <Footer/>
   </section>
 </template>
