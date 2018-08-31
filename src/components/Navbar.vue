@@ -10,12 +10,10 @@
 
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav class="ml-auto">
-          <b-nav-item to="/about"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'About':'Acerca de'}}</b-nav-item>
-          <b-nav-item to="/experience"  class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'Experience':'Experiencia'}}</b-nav-item>
-          <b-nav-item to="/education"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'Education':'Educación'}}</b-nav-item>
-          <b-nav-item to="/projects"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'Projects':'Proyectos'}}</b-nav-item>
-          <b-nav-item to="/blog"       class="pr-3 pl-3 pt-2 pb-1 text-center">Blog</b-nav-item>
-          <b-nav-item to="/contact"       class="pr-3 pl-3 pt-2 pb-1 text-center">{{ isEnglish ? 'Contact':'Contacto'}}</b-nav-item>
+          <b-nav-item v-for="label in sections.labels" :key="label.id"
+                      :to="'/' + Object.keys(label)[0]" class="pr-3 pl-3 pt-2 pb-1 text-center">
+                      {{ label[Object.keys(label)[0]][language] }}
+          </b-nav-item>
           <b-button @click="switchLanguage" :pressed="!isEnglish" variant="outline-light">{{ language }}</b-button>
         </b-navbar-nav>
       </b-collapse>
@@ -24,8 +22,15 @@
 </template>
 
 <script>
+import { db } from '../firebase'
+
 export default {
   name: 'Navbar',
+  firestore () {
+    return {
+      sections: db.collection('SectionContent').doc('Navbar')
+    }
+  },
   computed: {
     language () {
       return this.$store.state.language

@@ -1,7 +1,7 @@
 <template lang="html">
-  <section id="Education">
+  <section id="Education" class="animated fadeIn">
     <section id="EducationTitle">
-      <SectionTitle sectionName="Education" description="Great Places to Work."/>
+      <SectionTitle sectionName="Education" description="Back to school."/>
     </section>
   </section>
 </template>

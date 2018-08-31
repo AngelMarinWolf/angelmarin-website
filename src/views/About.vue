@@ -1,22 +1,23 @@
 <template lang="html">
   <section id="About" class="animated fadeIn">
     <section id="AboutTitle">
-      <SectionTitle sectionName="About me" description="Let me introduce myself"/>
+      <SectionTitle :sectionName="isEnglish ? 'About me':'Acerca de mi'"
+                    :description="isEnglish? 'Let me introduce myself':'Permiteme presentarme'"/>
     </section>
     <section id="AboutContent">
       <b-container class="p-md-0 pl-3 pr-3 mt-3">
-        <b-container id="ProfileCard" class="blurCard mb-3">
+        <b-container id="ProfileCard" class="blurCard shadow mb-3">
           <ProfileCard/>
         </b-container>
         <b-container>
           <b-row>
             <b-col sm="6" id="InformationCard" class="p-0 pr-md-2 mb-3">
-              <b-container class="blurCard p-3">
+              <b-container class="blurCard shadow p-3">
                 <InformationCard/>
               </b-container>
             </b-col>
             <b-col sm="6" id="SkillsCard" class="p-0 pl-md-2 mb-3">
-              <b-container class="blurCard p-3">
+              <b-container class="blurCard shadow p-3">
                 <SkillsCard/>
               </b-container>
             </b-col>
@@ -43,6 +44,14 @@ export default {
     InformationCard,
     SkillsCard,
     Footer
+  },
+  computed: {
+    language () {
+      return this.$store.state.language
+    },
+    isEnglish () {
+      return this.$store.getters.isEnglish
+    }
   }
 }
 </script>
@@ -65,9 +74,9 @@ export default {
   border-radius: 10px;
   border-color: grey;
 
-  -webkit-box-shadow: 5px 5px 20px 0px rgba(23,24,26,0.5);
+  /* -webkit-box-shadow: 5px 5px 20px 0px rgba(23,24,26,0.5);
   -moz-box-shadow: 5px 5px 20px 0px rgba(23,24,26,0.5);
-  box-shadow: 5px 5px 20px 0px rgba(23,24,26,0.5);
+  box-shadow: 5px 5px 20px 0px rgba(23,24,26,0.5); */
 }
 .description-text {
   font-size: 1.30em;

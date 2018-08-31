@@ -1,29 +1,29 @@
 <template lang="html">
   <b-container class="p-0">
-    <h4><strong>GENERAL INFO</strong></h4>
+    <h4><strong>{{ isEnglish ? 'GENERAL INFO':'INFORMACION GENERAL'}}</strong></h4>
     <hr>
     <ul class="list-unstyled description-text text-center">
       <li>
         <label class="labelInfo pl-2 pr-2">
-          <strong>Full Name:</strong>
+          <strong>{{ isEnglish ? 'Full Name:':'Nombre Completo:' }}</strong>
         </label>
         <p>Miguel Angel Marin Ecina</p>
       </li>
       <li>
         <label class="labelInfo pl-2 pr-2">
-          <strong>Birth Day:</strong>
+          <strong>{{ isEnglish ? 'Birth Day:':'Cumpleaños' }}</strong>
         </label>
-        <p>January 29th</p>
+        <p>{{ isEnglish ? 'January 29th':'29 de Enero' }}</p>
       </li>
       <li>
         <label class="labelInfo pl-2 pr-2">
-          <strong>Job:</strong>
+          <strong>{{ isEnglish ? 'Job:':'Roles:' }}</strong>
         </label>
         <p>SysAdmin, DevOps, AWS Engineer, Frontend Developer, Database Administrator</p>
       </li>
       <li>
         <label class="labelInfo pl-2 pr-2">
-          <strong>Telephone:</strong>
+          <strong>{{ isEnglish ? 'Telephone:':'Telefono' }}</strong>
         </label>
         <p>
           <b-button variant="outline-secondary btn-outline-square" href="tel:+52018441289316">
@@ -47,6 +47,15 @@
 
 <script>
 export default {
+  name: 'InformationCard',
+  computed: {
+    language () {
+      return this.$store.state.language
+    },
+    isEnglish () {
+      return this.$store.getters.isEnglish
+    }
+  }
 }
 </script>
 

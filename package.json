@@ -9,12 +9,15 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@firebase/app": "^0.3.3",
+    "@firebase/firestore": "^0.7.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
     "@fortawesome/free-brands-svg-icons": "^5.2.0",
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "@fortawesome/vue-fontawesome": "^0.1.1",
     "bootstrap-vue": "^2.0.0-rc.11",
     "vue": "^2.5.17",
+    "vue-firestore": "^0.2.9",
     "vue-observe-visibility": "^0.4.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

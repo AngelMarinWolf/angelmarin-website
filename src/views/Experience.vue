@@ -4,41 +4,49 @@
       <SectionTitle sectionName="Experience" description="Great Places to Work."/>
     </section>
     <section id="ExperienceContent">
-      <b-container class="mt-3">
-        <div class="card-deck">
+      <b-container fluid class="mt-3">
+        <div class="card-deck d-flex justify-content-center">
           <WorkCard
             title="EPAM Systems Mexico"
-            image="Logo-EPAM-2.png"
+            image="Logo-EPAM.jpg"
             alt_imgage="EPAM Logo"
-            content=""
+            content="Working as Senior DevOps specialized in Cloud Architectures over the Amazon AWS platform,
+                    creating integrations for the automatization following the principles of CI/CD, infrastructure
+                    as code, the creation of containers and orchestration of application."
             subtitle="May 2018 - Pressent"/>
           <WorkCard
             title="Maniak"
-            image="Logo-Maniak.png"
+            image="Logo-Maniak.jpg"
             alt_imgage="Maniak Logo"
-            content=""
+            content="Automating processes to get better performances during the Development
+                    of Software Projects, Designing and building Infrastructure as code
+                    for the quick creation of environments with high availability and excellent security."
             subtitle="February 2018 - May 2018"/>
           <WorkCard
             title="ClickIT Smart Technologies"
             image="Logo-ClickIT.jpg"
             alt_imgage="ClickIT Logo"
-            content=""
-            subtitle="February 2018 - May 2018"/>
+            content="I design and built architectures for web applications. Using the latest technologies and
+                    best practices for it. Creating workflows and automating the tasks to reach an agile development."
+            subtitle="March 2016 - February 2018"/>
         </div>
       </b-container>
     </section>
+    <Footer/>
   </section>
 </template>
 
 <script>
 import SectionTitle from '@/components/SectionTitle.vue'
 import WorkCard from '@/components/WorkCard.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Experience',
   components: {
     SectionTitle,
-    WorkCard
+    WorkCard,
+    Footer
   }
 }
 </script>
@@ -50,15 +58,5 @@ export default {
   background-repeat: repeat;
   background-attachment: fixed;
   background-position: center;
-}
-.blurCard {
-  background-color: rgb(240,240,240,0.9);
-
-  border-radius: 10px;
-  border-color: grey;
-
-  -webkit-box-shadow: 5px 5px 20px 0px rgba(23,24,26,0.5);
-  -moz-box-shadow: 5px 5px 20px 0px rgba(23,24,26,0.5);
-  box-shadow: 5px 5px 20px 0px rgba(23,24,26,0.5);
 }
 </style>

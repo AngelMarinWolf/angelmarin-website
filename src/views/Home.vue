@@ -28,7 +28,7 @@ export default {
 <style media="screen">
   #Home {
     height: inherit;
-    background-image: url('../assets/backgrounds/courscant-op.jpg');
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/angel-marin.appspot.com/o/courscant-op.jpg?alt=media&token=8476cc30-f837-4bf6-8e2b-2d1b3bde9f50');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
