@@ -7,14 +7,14 @@
       <h4><strong>{{ isEnglish ? 'PROFILE':'PERFIL' }}</strong></h4>
       <hr>
       <p class="text-justify description-text">
-        {{ content.ProfileCard.Paragraf[language][0] }}
+        {{ paragrafs[0] }}
       </p>
       <b-collapse id="ReadMoreProfile">
         <p class="text-justify description-text">
-          {{ content.ProfileCard.Paragraf[language][1] }}
+          {{ paragrafs[1] }}
         </p>
         <p class="text-justify description-text">
-          {{ content.ProfileCard.Paragraf[language][2] }}
+          {{ paragrafs[2] }}
         </p>
       </b-collapse>
       <div class="d-flex justify-content-end">
@@ -28,18 +28,14 @@
 </template>
 
 <script>
-import { db } from '../firebase'
+import db from '../firebase'
 
 export default {
   name: 'ProfileCard',
   data () {
     return {
-      readmoreShow: false
-    }
-  },
-  firestore () {
-    return {
-      content: db.collection('SectionContent').doc('About')
+      readmoreShow: false,
+      paragrafs: ''
     }
   },
   computed: {
@@ -60,6 +56,21 @@ export default {
     },
     language () {
       return this.$store.state.language
+    },
+    isEnglish () {
+      return this.$store.getters.isEnglish
+    }
+  },
+  created () {
+    db.collection('SectionContent').doc('About').onSnapshot((doc) => {
+      this.paragrafs = doc.data().ProfileCard.Paragraf[this.language]
+    })
+  },
+  watch: {
+    language (val, oldVal) {
+      db.collection('SectionContent').doc('About').onSnapshot((doc) => {
+        this.paragrafs = doc.data().ProfileCard.Paragraf[this.language]
+      })
     }
   }
 }

@@ -20,4 +20,7 @@ html, body, #app {
   height: 100%;
   background-color: #2096D6;
 }
+.fullHeight {
+  height: 100%;
+}
 </style>

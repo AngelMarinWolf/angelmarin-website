@@ -7,7 +7,11 @@ const firebaseApp = firebase.initializeApp({
   databaseURL: 'https://angel-marin.firebaseio.com',
   projectId: 'angel-marin',
   storageBucket: 'angel-marin.appspot.com',
-  messagingSenderId: 290340122419
+  messagingSenderId: 290340122419,
+  timestampsInSnapshots: true
 })
 
-export const db = firebaseApp.firestore()
+const db = firebaseApp.firestore()
+db.settings({timestampsInSnapshots: true})
+
+export default db

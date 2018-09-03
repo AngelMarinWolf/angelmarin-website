@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "testing-vue-angel"
+    "default": "testing-vue-angel",
+    "production": "angel-marin"
   }
 }

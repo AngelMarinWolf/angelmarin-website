@@ -1,10 +1,10 @@
 <template lang="html">
-  <section id="Experience" class="animated fadeIn">
+  <section id="Experience" class="animated fadeIn" :class="[{fullHeight: isBigger}]">
     <section id="ExperienceTitle">
       <SectionTitle sectionName="Experience" description="Great Places to Work."/>
     </section>
     <section id="ExperienceContent">
-      <b-container fluid class="mt-3">
+      <b-container fluid class="mt-3 mb-md-3">
         <div class="card-deck d-flex justify-content-center">
           <WorkCard
             title="EPAM Systems Mexico"
@@ -32,7 +32,7 @@
         </div>
       </b-container>
     </section>
-    <Footer/>
+    <Footer :fixed="isBigger"/>
   </section>
 </template>
 
@@ -47,6 +47,36 @@ export default {
     SectionTitle,
     WorkCard,
     Footer
+  },
+  data () {
+    return {
+      window: {
+        width: 0,
+        height: 0
+      }
+    }
+  },
+  computed: {
+    isBigger () {
+      if (this.window.height >= 850 && this.window.width >= 850) {
+        return true
+      } else {
+        return false
+      }
+    }
+  },
+  created () {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+  destroyed () {
+    window.removeEventListener('resize', this.handleResize)
+  },
+  methods: {
+    handleResize () {
+      this.window.width = window.innerWidth
+      this.window.height = window.innerHeight
+    }
   }
 }
 </script>
