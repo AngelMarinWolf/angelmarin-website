@@ -1,5 +1,6 @@
 import { firebase } from '@firebase/app'
 import '@firebase/firestore'
+import '@firebase/storage'
 
 const firebaseApp = firebase.initializeApp({
   apiKey: 'AIzaSyBHnqljD0_dI5ZBRrE7NSgsMddIhQvctEg',
@@ -14,4 +15,6 @@ const firebaseApp = firebase.initializeApp({
 const db = firebaseApp.firestore()
 db.settings({timestampsInSnapshots: true})
 
-export default db
+const storage = firebaseApp.storage()
+
+export {db, storage}

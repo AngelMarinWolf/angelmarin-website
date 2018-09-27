@@ -10,6 +10,9 @@
 
       <b-collapse is-nav id="nav_collapse">
         <b-navbar-nav class="ml-auto">
+          <b-nav-item to="/" class="pr-3 pl-3 pt-2 pb-1 text-center">
+                      {{ isEnglish ? 'Home' : 'Inicio' }}
+          </b-nav-item>
           <b-nav-item v-for="label in sections.labels" :key="label.id"
                       :to="'/' + Object.keys(label)[0]" class="pr-3 pl-3 pt-2 pb-1 text-center">
                       {{ label[Object.keys(label)[0]][language] }}
@@ -22,7 +25,7 @@
 </template>
 
 <script>
-import db from '../firebase'
+import { db } from '../firebase'
 
 export default {
   name: 'Navbar',

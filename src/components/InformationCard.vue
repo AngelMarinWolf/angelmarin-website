@@ -26,7 +26,7 @@
           <strong>{{ isEnglish ? 'Telephone:':'Telefono' }}</strong>
         </label>
         <p>
-          <b-button variant="outline-secondary btn-outline-square" href="tel:+52018441289316">
+          <b-button variant="outline-dark btn-outline-square" href="tel:+52018441289316">
             <strong>+52 01 844 128 9316</strong>
           </b-button>
         </p>
@@ -36,7 +36,7 @@
           <strong>Email:</strong>
         </label>
         <p>
-          <b-button variant="outline-secondary btn-outline-square" href="mailto:marin.miguelangel96@gmail.com">
+          <b-button variant="outline-dark btn-outline-square" href="mailto:marin.miguelangel96@gmail.com">
             <strong>marin.miguelangel96@gmail.com</strong>
           </b-button>
         </p>

@@ -5,6 +5,7 @@ import About from './views/About.vue'
 import Experience from './views/Experience.vue'
 import Education from './views/Education.vue'
 import Projects from './views/Projects.vue'
+import Blog from './views/Blog.vue'
 import Contact from './views/Contact.vue'
 
 Vue.use(Router)
@@ -37,6 +38,11 @@ export default new Router({
       path: '/projects',
       name: 'projects',
       component: Projects
+    },
+    {
+      path: '/blog',
+      name: 'blog',
+      component: Blog
     },
     {
       path: '/contact',

@@ -1,7 +1,7 @@
 <template lang="html">
   <b-row align-v="center">
     <b-col sm="12" md="3" class="p-3">
-      <img src="../assets/pictures/profile-picture-op.jpg" alt="Profile_Picture" class="img-thumbnail">
+      <img :src="profile_picture_url" alt="Profile_Picture" class="img-thumbnail">
     </b-col>
     <b-col sm="12" md="9" class="p-3">
       <h4><strong>{{ isEnglish ? 'PROFILE':'PERFIL' }}</strong></h4>
@@ -28,14 +28,16 @@
 </template>
 
 <script>
-import db from '../firebase'
+import { db, storage } from '../firebase'
 
 export default {
   name: 'ProfileCard',
   data () {
     return {
       readmoreShow: false,
-      paragrafs: ''
+      paragrafs: [],
+      profile_picture: 'profile-picture-op-alt.jpg',
+      profile_picture_url: ''
     }
   },
   computed: {
@@ -61,9 +63,14 @@ export default {
       return this.$store.getters.isEnglish
     }
   },
-  created () {
-    db.collection('SectionContent').doc('About').onSnapshot((doc) => {
+  beforeCreate () {
+    db.collection('SectionContent').doc('About').onSnapshot(doc => {
       this.paragrafs = doc.data().ProfileCard.Paragraf[this.language]
+    })
+  },
+  created () {
+    storage.ref('/public/photos/' + this.profile_picture).getDownloadURL().then((result) => {
+      this.profile_picture_url = result
     })
   },
   watch: {

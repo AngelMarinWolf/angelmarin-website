@@ -6,29 +6,12 @@
     <section id="ExperienceContent">
       <b-container fluid class="mt-3 mb-md-3">
         <div class="card-deck d-flex justify-content-center">
-          <WorkCard
-            title="EPAM Systems Mexico"
-            image="Logo-EPAM.jpg"
-            alt_imgage="EPAM Logo"
-            content="Working as Senior DevOps specialized in Cloud Architectures over the Amazon AWS platform,
-                    creating integrations for the automatization following the principles of CI/CD, infrastructure
-                    as code, the creation of containers and orchestration of application."
-            subtitle="May 2018 - Pressent"/>
-          <WorkCard
-            title="Maniak"
-            image="Logo-Maniak.jpg"
-            alt_imgage="Maniak Logo"
-            content="Automating processes to get better performances during the Development
-                    of Software Projects, Designing and building Infrastructure as code
-                    for the quick creation of environments with high availability and excellent security."
-            subtitle="February 2018 - May 2018"/>
-          <WorkCard
-            title="ClickIT Smart Technologies"
-            image="Logo-ClickIT.jpg"
-            alt_imgage="ClickIT Logo"
-            content="I design and built architectures for web applications. Using the latest technologies and
-                    best practices for it. Creating workflows and automating the tasks to reach an agile development."
-            subtitle="March 2016 - February 2018"/>
+          <WorkCard v-for="card in workcards" v-bind:key="card.id"
+            :title="card.Title"
+            :image="card.Image"
+            :alt_imgage="card.Alt_Image"
+            :content="card.Description[language]"
+            :subtitle="card.Subtitle[language]"/>
         </div>
       </b-container>
     </section>
@@ -40,6 +23,8 @@
 import SectionTitle from '@/components/SectionTitle.vue'
 import WorkCard from '@/components/WorkCard.vue'
 import Footer from '@/components/Footer.vue'
+
+import { db } from '../firebase'
 
 export default {
   name: 'Experience',
@@ -53,7 +38,8 @@ export default {
       window: {
         width: 0,
         height: 0
-      }
+      },
+      workcards: []
     }
   },
   computed: {
@@ -63,7 +49,18 @@ export default {
       } else {
         return false
       }
+    },
+    language () {
+      return this.$store.state.language
+    },
+    isEnglish () {
+      return this.$store.getters.isEnglish
     }
+  },
+  beforeCreate () {
+    db.collection('SectionContent').doc('Experience').onSnapshot(doc => {
+      this.workcards = doc.data().WorkCards.reverse()
+    })
   },
   created () {
     window.addEventListener('resize', this.handleResize)

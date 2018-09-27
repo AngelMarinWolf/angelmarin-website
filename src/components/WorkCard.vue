@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { storage } from '../firebase'
+
 export default {
   name: 'WorkCard',
   props: {
@@ -21,8 +23,13 @@ export default {
   },
   data () {
     return {
-      image_path: require('../assets/logos/' + this.image)
+      image_path: ''
     }
+  },
+  created () {
+    storage.ref('/public/logos/works/' + this.image).getDownloadURL().then((result) => {
+      this.image_path = result
+    })
   }
 }
 </script>

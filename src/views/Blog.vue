@@ -1,7 +1,7 @@
 <template lang="html">
-  <section id="Contact" class="animated fadeIn">
-    <section id="ContactTitle">
-      <SectionTitle sectionName="Contact" description="How can you find me?"/>
+  <section id="Blog" class="animated fadeIn">
+    <section id="BlogTitle">
+      <SectionTitle sectionName="Blog" description="Welcome to my blog :)"/>
     </section>
   </section>
 </template>
@@ -10,7 +10,7 @@
 import SectionTitle from '@/components/SectionTitle.vue'
 
 export default {
-  name: 'Contact',
+  name: 'Blog',
   components: {
     SectionTitle
   }
@@ -18,8 +18,8 @@ export default {
 </script>
 
 <style lang="css">
-#Contact {
-  background-image: url("../assets/backgrounds/circuit-board.svg");
+#Blog {
+  background-image: url("../assets/backgrounds/floating-cogs.svg");
   background-color: #2096D6;
   background-repeat: repeat;
   background-attachment: fixed;
